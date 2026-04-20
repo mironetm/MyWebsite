@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Mihaela Mironet</title>
+    <meta name="description" content="Portfolio of Mihaela Mironet — graphic design, branding and visual storytelling." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="contact-page">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="top-right-mironet">mironet<span class="dot">•</span></a>
+
+
+
+    <div class="fullscreen-menu" id="fullscreenMenu" aria-hidden="true">
+      <div class="menu-content">
+        <a class="logo" href="index.html">MIHAELA MIRONET</a>
+        <nav class="main-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+          <a class="nav-link" href="about.html">About Me</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-socials" id="headerSocials" aria-label="Social links"></div>
+      </div>
+    </div>
+
+    <main class="page-main contact-container">
+      <div class="contact-left">
+        <h1>Contact</h1>
+        <p>I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        <div class="contact-info">
+          <p><strong>Email:</strong> mironet2001@gmail.com</p>
+          <p><strong>Location:</strong> London, UK</p>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form action="mailto:mironet2001@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" rows="6" placeholder="How can I help you?" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-socials" id="footerSocials" aria-label="Footer Social links"></div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

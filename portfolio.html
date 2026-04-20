@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Mihaela Mironet</title>
+    <meta name="description" content="Portfolio of Mihaela Mironet — graphic design, branding and visual storytelling." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="portfolio-page">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="top-right-mironet">mironet<span class="dot">•</span></a>
+
+
+
+    <div class="fullscreen-menu" id="fullscreenMenu" aria-hidden="true">
+      <div class="menu-content">
+        <a class="logo" href="index.html">MIHAELA MIRONET</a>
+        <nav class="main-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+          <a class="nav-link" href="about.html">About Me</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+        <div class="header-socials" id="headerSocials" aria-label="Social links"></div>
+      </div>
+    </div>
+
+    <main class="page-main portfolio-main">
+      <section class="portfolio-editorial" aria-label="Featured portfolio projects">
+        <article class="project-row">
+          <a href="project-ux.html" class="project-image-link" aria-label="View UX/UI and App Design project">
+            <img
+              class="project-image"
+              src="PortfolioImages/HarvestN16mockup.png"
+              alt="UX and app design — Harvest N16 mockup"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-copy">
+            <a href="project-ux.html" class="project-heading-link" aria-label="View UX/UI and App Design project">
+              <h2>UX/UI &amp; APP DESIGN</h2>
+            </a>
+            <p class="project-category">Digital Product Experience</p>
+            <p class="project-subtitle">Elegant interfaces designed for intuitive flow and high-impact usability.</p>
+          </div>
+        </article>
+
+        <article class="project-row project-row--reverse">
+          <a href="project-brand.html" class="project-image-link" aria-label="View Brand Identity project">
+            <img
+              class="project-image"
+              src="PortfolioImages/graphicDesign.png"
+              alt="Brand identity — graphic design work"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-copy">
+            <a href="project-brand.html" class="project-heading-link" aria-label="View Brand Identity project">
+              <h2>BRAND IDENTITY</h2>
+            </a>
+            <p class="project-category">Visual Direction &amp; Systems</p>
+            <p class="project-subtitle">Cohesive brand worlds built through refined typography and strategic tone.</p>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <a href="project-motion.html" class="project-image-link" aria-label="View Motion Design and Animation project">
+            <img
+              class="project-image"
+              src="PortfolioImages/stellar+veil.jpg"
+              alt="Motion design — Stellar and Veil"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-copy">
+            <a href="project-motion.html" class="project-heading-link" aria-label="View Motion Design and Animation project">
+              <h2>MOTION DESIGN &amp; ANIMATION</h2>
+            </a>
+            <p class="project-category">Movement &amp; Narrative</p>
+            <p class="project-subtitle">Visual storytelling translated into fluid, cinematic motion pieces.</p>
+          </div>
+        </article>
+
+        <article class="project-row project-row--reverse">
+          <a href="project-social.html" class="project-image-link" aria-label="View Social Media project">
+            <img
+              class="project-image"
+              src="PortfolioImages/SocialMediaMockup.png"
+              alt="Social media campaign mockup"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-copy">
+            <a href="project-social.html" class="project-heading-link" aria-label="View Social Media project">
+              <h2>SOCIAL MEDIA</h2>
+            </a>
+            <p class="project-category">Campaign Visual Content</p>
+            <p class="project-subtitle">Editorial-led social concepts that balance identity, emotion, and clarity.</p>
+          </div>
+        </article>
+
+        <article class="project-row">
+          <a href="project-editorial.html" class="project-image-link" aria-label="View Editorial Work project">
+            <img
+              class="project-image"
+              src="PortfolioImages/MagazineMOCKUP.png"
+              alt="Editorial work — magazine mockup"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-copy">
+            <a href="project-editorial.html" class="project-heading-link" aria-label="View Editorial Work project">
+              <h2>EDITORIAL WORK</h2>
+            </a>
+            <p class="project-category">Print &amp; Conceptual Art Direction</p>
+            <p class="project-subtitle">Illustrative compositions curated with a fashion-forward editorial sensibility.</p>
+          </div>
+        </article>
+      </section>
+
+      <span class="portfolio-arrow" aria-hidden="true">↘</span>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-socials" id="footerSocials" aria-label="Footer Social links"></div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

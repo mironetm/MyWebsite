@@ -111,6 +111,65 @@ function buildGallery() {
   }
 }
 
+function preloadHomeGalleryImages() {
+  const uniqueImageFiles = [...new Set(ALL_IMAGES.map((item) => item.file))].filter(
+    (file) => !file.toLowerCase().endsWith(".pdf")
+  );
+
+  const preloadTasks = uniqueImageFiles.map(
+    (file) =>
+      new Promise((resolve) => {
+        const img = new Image();
+        img.onload = resolve;
+        img.onerror = resolve;
+        img.src = `Images/${file}`;
+      })
+  );
+
+  return Promise.allSettled(preloadTasks);
+}
+
+function setupHomeIntro() {
+  const body = document.body;
+  if (!body.classList.contains("home-page")) return;
+
+  const intro = document.getElementById("homeIntro");
+  if (!intro) return;
+  const introSessionKey = "homeIntroPlayed";
+
+  let alreadyPlayed = false;
+  try {
+    alreadyPlayed = window.sessionStorage.getItem(introSessionKey) === "1";
+  } catch (error) {
+    alreadyPlayed = false;
+  }
+
+  if (alreadyPlayed) {
+    body.classList.remove("home-intro-active");
+    intro.remove();
+    return;
+  }
+
+  try {
+    window.sessionStorage.setItem(introSessionKey, "1");
+  } catch (error) {
+    // Ignore storage errors; intro still works for this load.
+  }
+
+  const introDurationMs = 3000;
+
+  window.setTimeout(() => {
+    intro.classList.add("is-exiting");
+    body.classList.remove("home-intro-active");
+  }, introDurationMs);
+
+  window.setTimeout(() => {
+    intro.remove();
+  }, introDurationMs + 500);
+}
+
+setupHomeIntro();
+
 
 function buildSocialIcons(targetId) {
   const container = document.getElementById(targetId);
@@ -137,7 +196,13 @@ function buildSocialIcons(targetId) {
 buildSocialIcons("headerSocials");
 buildSocialIcons("floatingSocials");
 buildSocialIcons("footerSocials");
-buildGallery();
+if (document.getElementById("gallery")) {
+  preloadHomeGalleryImages().then(() => {
+    buildGallery();
+  });
+} else {
+  buildGallery();
+}
 
 function setupMenuToggle() {
   const toggle = document.getElementById("menuToggle");

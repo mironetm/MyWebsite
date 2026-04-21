@@ -27,6 +27,15 @@ body {
   color: #111;
 }
 
+@keyframes home-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -212,6 +221,36 @@ a {
 .bottom-right-socials .social-icon {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Home page: reveal key elements one by one */
+body.home-page .menu-toggle,
+body.home-page .middle-left-text,
+body.home-page .top-right-text,
+body.home-page .bottom-right-socials,
+body.home-page .gallery-main {
+  opacity: 0;
+  animation: home-fade-in 700ms ease forwards;
+}
+
+body.home-page .menu-toggle {
+  animation-delay: 90ms;
+}
+
+body.home-page .middle-left-text {
+  animation-delay: 220ms;
+}
+
+body.home-page .top-right-text {
+  animation-delay: 360ms;
+}
+
+body.home-page .bottom-right-socials {
+  animation-delay: 500ms;
+}
+
+body.home-page .gallery-main {
+  animation-delay: 650ms;
 }
 
 /* ── Top Right Mironet (Other Pages) ── */
@@ -415,6 +454,15 @@ a {
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .scroll-track {
+    animation: none;
+  }
+
+  body.home-page .menu-toggle,
+  body.home-page .middle-left-text,
+  body.home-page .top-right-text,
+  body.home-page .bottom-right-socials,
+  body.home-page .gallery-main {
+    opacity: 1;
     animation: none;
   }
 }

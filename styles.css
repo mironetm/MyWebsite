@@ -84,7 +84,7 @@ a {
 .fullscreen-menu {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
   z-index: 150;
   display: flex;
@@ -178,7 +178,8 @@ a {
   right: 100px;
   text-align: right;
   z-index: 100;
-  font-size: 2.2rem;
+  font-size: clamp(1.35rem, 2.3vw, 3rem);
+  line-height: 1.32;
   letter-spacing: 0.05em;
   color: #fff;
 }
@@ -483,7 +484,7 @@ body.about-page {
 /* Phone / small tablet — About: image first, text below; compact header chrome */
 @media (max-width: 768px) {
   .menu-toggle {
-    top: clamp(14px, 3.5vw, 22px);
+    top: max(clamp(24px, 6vw, 34px), calc(env(safe-area-inset-top, 0px) + 12px));
     left: clamp(12px, 3.5vw, 20px);
     width: 32px;
     height: 32px;
@@ -505,16 +506,16 @@ body.about-page {
   }
 
   .top-right-mironet {
-    top: clamp(14px, 3.5vw, 22px);
+    top: max(clamp(24px, 6vw, 34px), calc(env(safe-area-inset-top, 0px) + 12px));
     right: clamp(12px, 3.5vw, 20px);
-    font-size: 1.05rem;
+    font-size: clamp(1.2rem, 5.2vw, 1.45rem);
   }
 
   /* Size • to match the tittle of “i” in “mironet” (scales with logo text) */
   .top-right-mironet .dot {
-    font-size: 0.26em;
+    font-size: 0.3em;
     line-height: 0;
-    margin-top: 0.4em;
+    margin-top: 0.36em;
     margin-left: 0.05em;
   }
 
@@ -571,9 +572,9 @@ body.about-page {
   }
 
   .middle-left-text .dot {
-    font-size: 0.24em;
+    font-size: 0.32em;
     line-height: 0;
-    margin-top: 0.38em;
+    margin-top: 0.34em;
     margin-left: 0.05em;
   }
 
@@ -581,10 +582,10 @@ body.about-page {
     top: max(clamp(76px, 18vw, 118px), env(safe-area-inset-top, 0px));
     right: max(clamp(14px, 4vw, 22px), env(safe-area-inset-right, 0px));
     left: auto;
-    width: min(12.5em, 48vw);
+    width: min(14.5em, 62vw);
     text-align: right;
-    font-size: clamp(0.68rem, 3vw, 0.9rem);
-    line-height: 1.45;
+    font-size: clamp(0.95rem, 4vw, 1.25rem);
+    line-height: 1.4;
     letter-spacing: 0.05em;
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.2);
   }
@@ -643,12 +644,6 @@ body.about-page {
 
   body.about-page .about-text p {
     font-size: 1rem;
-  }
-
-  body.portfolio-page .top-right-mironet {
-    right: clamp(12px, 3.5vw, 20px);
-    top: clamp(14px, 3.5vw, 22px);
-    font-size: 1.05rem;
   }
 
   body.contact-page .contact-container {
@@ -751,14 +746,14 @@ body.contact-page {
 .contact-left h1 {
   font-size: 4rem;
   font-weight: 700;
-  color: #e07593;
+  color: #e07493;
   margin-bottom: 20px;
   letter-spacing: -0.02em;
 }
 
 .contact-left p {
   font-size: 1.15rem;
-  color: #e07593;
+  color: #e07493;
   line-height: 1.6;
   margin-bottom: 40px;
 }
@@ -776,6 +771,7 @@ body.contact-page {
 .contact-right {
   flex: 1;
   max-width: 600px;
+  margin-top: clamp(20px, 3vw, 42px);
   background: #fff;
   padding: 60px;
   border-radius: 20px;
@@ -844,10 +840,6 @@ body.portfolio-page {
   background: rgba(224, 117, 147, 0.3);
   /* One value: main padding + logo `right` stay on the same vertical line (incl. dot) */
   --portfolio-page-edge: 100px;
-}
-
-body.portfolio-page .top-right-mironet {
-  right: var(--portfolio-page-edge);
 }
 
 body.portfolio-page :is(h1, h2, h3, h4, h5, h6, p, a, span, strong, em, li) {
@@ -1054,7 +1046,7 @@ body.portfolio-page .project-row--reverse.is-revealed .project-image {
   line-height: 1.05;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #fff;
+  color: #463f49;
 }
 
 .project-copy h2 + .project-category {
@@ -1066,8 +1058,8 @@ body.portfolio-page .project-row--reverse.is-revealed .project-image {
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #fff;
-  opacity: 0.9;
+  color: #463f49;
+  opacity: 1;
 }
 
 .project-subtitle {

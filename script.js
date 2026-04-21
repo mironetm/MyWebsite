@@ -1,7 +1,7 @@
 /* Home gallery: only files from Images/ (MePhoto excluded) */
 const ALL_IMAGES = [
   { file: "BllomPhoneMockup.png", title: "Bloom Phone Mockup" },
-  { file: "stellar+veil.jpg", title: "Motion Design" },
+  { file: "stellarveil.jpg", title: "Motion Design" },
   { file: "graphicDesign.png", title: "Graphic Design" },
   { file: "Illustration1.png", title: "Illustration" },
   { file: "phonemockup.jpg", title: "Phone Mockup" },
@@ -64,13 +64,6 @@ function buildCard({ file, title }) {
   }
 
   card.appendChild(media);
-
-  if (file === "stellar+veil.jpg") {
-    const hoverText = document.createElement("div");
-    hoverText.className = "card-hover-text";
-    hoverText.textContent = title;
-    card.appendChild(hoverText);
-  }
 
   return card;
 }

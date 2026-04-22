@@ -3,9 +3,9 @@ const ALL_IMAGES = [
   { file: "BllomPhoneMockup.png", title: "Bloom Phone Mockup" },
   { file: "stellarveil.jpg", title: "Motion Design" },
   { file: "graphicDesign.png", title: "Graphic Design" },
-  { file: "Illustration1.png", title: "Illustration" },
   { file: "phonemockup.jpg", title: "Phone Mockup" },
   { file: "SurfIllustration.PNG", title: "Surf Illustration" },
+  { file: "Illustration1.png", title: "Illustration" },
 ];
 
 // The columns will be generated dynamically based on screen width

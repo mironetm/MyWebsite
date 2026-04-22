@@ -82,8 +82,8 @@ a {
 
 .menu-toggle span {
   width: 100%;
-  height: 3px;
-  border-radius: 2px;
+  height: 4px;
+  border-radius: 3px;
   background: #fff;
   transition: transform 0.3s ease, opacity 0.3s ease, background 0.3s ease;
 }
@@ -624,8 +624,8 @@ body.about-page {
   }
 
   .menu-toggle span {
-    height: 3px;
-    border-radius: 2px;
+    height: 4px;
+    border-radius: 3px;
   }
 
   .menu-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -1002,6 +1002,7 @@ body.portfolio-page .top-right-mironet:hover .dot {
 /* Fullscreen menu (all pages): page links pink, black on hover; MIHAELA MIRONET black, pink on hover */
 .fullscreen-menu .nav-link {
   color: #e07593;
+  font-weight: 700;
 }
 
 .fullscreen-menu .nav-link:hover {

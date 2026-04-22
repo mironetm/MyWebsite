@@ -568,7 +568,7 @@ body.about-page {
   max-width: 1600px;
   margin: 0 auto;
   min-height: calc(100vh - 150px);
-  padding: 150px 150px 100px 150px;
+  padding: 170px 150px 100px 150px;
 }
 
 .about-photo {
@@ -581,7 +581,7 @@ body.about-page {
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(224, 117, 147, 0.4);
   display: block;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .about-text {
@@ -594,7 +594,7 @@ body.about-page {
 
 .about-text h1 {
   font-size: 32px;
-  margin-top: 40px;
+  margin-top: 0;
   margin-bottom: 30px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -607,7 +607,7 @@ body.about-page {
 
 @media (max-width: 1200px) {
   .about-container {
-    padding: 100px 150px 100px 250px;
+    padding: 120px 150px 100px 250px;
     gap: 50px;
   }
 }
@@ -757,7 +757,7 @@ body.about-page {
   body.about-page .about-container {
     flex-direction: column;
     align-items: stretch;
-    padding: clamp(88px, 22vw, 120px) clamp(16px, 4vw, 24px) clamp(48px, 10vw, 72px);
+    padding: clamp(104px, 24vw, 136px) clamp(16px, 4vw, 24px) clamp(48px, 10vw, 72px);
     gap: clamp(20px, 5vw, 32px);
     min-height: auto;
   }
@@ -1321,7 +1321,8 @@ body.project-detail-page .portfolio-main {
 
 /* Social project page — stacked: heading, large image, description under image */
 body.project-detail-page--social .project-detail-inner {
-  max-width: min(1200px, 100%);
+  max-width: 100%;
+  width: 100%;
 }
 
 body.project-detail-page--social .project-detail-text--social-head {
@@ -1381,13 +1382,13 @@ body.project-detail-page--social .project-social-block-figure {
 
 body.project-detail-page--social .project-social-block-figure img {
   width: 100%;
-  max-width: 100%;
-  max-height: min(82vh, 920px);
-  height: auto;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
   display: block;
   margin-inline: auto;
   border-radius: 4px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -1475,7 +1476,8 @@ body.project-detail-page--motion .project-motion-block-text .motion-subheading {
 
 /* UX/UI page — Harvest N16 case study layout */
 body.project-detail-page--ux .project-detail-inner {
-  max-width: min(1200px, 100%);
+  max-width: 100%;
+  width: 100%;
 }
 
 body.project-detail-page--ux .project-detail-text--ux-head {
@@ -1502,11 +1504,14 @@ body.project-detail-page--ux .project-ux-block-heading {
 }
 
 body.project-detail-page--ux .project-ux-gallery-grid {
+  --ux-grid-gap: clamp(0.8rem, 2.6vw, 1.3rem);
+  --ux-grid-height: clamp(340px, 44vw, 510px);
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: clamp(0.8rem, 2.6vw, 1.3rem);
+  gap: var(--ux-grid-gap);
   margin-bottom: clamp(1.5rem, 3.5vw, 2rem);
-  max-width: min(980px, 100%);
+  width: 100%;
+  max-width: none;
   margin-inline: auto;
 }
 
@@ -1522,7 +1527,7 @@ body.project-detail-page--ux .project-ux-gallery-item {
 body.project-detail-page--ux .project-ux-gallery-stack {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: clamp(0.8rem, 2.6vw, 1.3rem);
+  gap: var(--ux-grid-gap);
 }
 
 body.project-detail-page--ux .project-ux-gallery-item img {
@@ -1535,7 +1540,11 @@ body.project-detail-page--ux .project-ux-gallery-item img {
 }
 
 body.project-detail-page--ux .project-ux-gallery-item--main img {
-  height: clamp(340px, 44vw, 510px);
+  height: var(--ux-grid-height);
+}
+
+body.project-detail-page--ux .project-ux-gallery-item--stack img {
+  height: calc((var(--ux-grid-height) - var(--ux-grid-gap)) / 2);
 }
 
 body.project-detail-page--ux .project-ux-gallery-item:hover img {
@@ -1548,6 +1557,9 @@ body.project-detail-page--ux .project-ux-block-text {
   line-height: 1.75;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.94);
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
 }
 
 body.project-detail-page--ux .project-ux-block-text p {
@@ -1577,32 +1589,39 @@ body.project-detail-page--ux .project-ux-link:hover {
 
 body.project-detail-page--ux .project-ux-featured-media {
   margin: 0 0 clamp(1.4rem, 3.4vw, 1.9rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
 }
 
 body.project-detail-page--ux .project-ux-featured-media .project-ux-gallery-item img {
-  height: auto;
-  max-height: min(72vh, 820px);
-  object-fit: contain;
+  height: clamp(360px, 48vw, 760px);
+  max-height: none;
+  object-fit: cover;
 }
 
 body.project-detail-page--ux .project-ux-duo-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.8rem, 2.6vw, 1.3rem);
   margin-top: clamp(1.2rem, 3vw, 1.6rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
 }
 
 body.project-detail-page--ux .project-ux-duo-grid .project-ux-gallery-item img {
-  height: clamp(220px, 28vw, 330px);
+  height: clamp(360px, 48vw, 760px);
 }
 
 body.project-detail-page--ux .project-ux-duo-grid .project-ux-gallery-item img.project-ux-image--no-crop {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Brand Identity page — case study blocks */
 body.project-detail-page--brand .project-detail-inner {
-  max-width: min(1200px, 100%);
+  max-width: 100%;
+  width: 100%;
 }
 
 body.project-detail-page--brand .project-detail-text--brand-head {
@@ -1630,6 +1649,12 @@ body.project-detail-page--brand .project-brand-block-heading {
 
 body.project-detail-page--brand .project-brand-featured-media {
   margin: 0 0 clamp(1.4rem, 3.4vw, 1.9rem);
+  width: 100%;
+  max-width: none;
+}
+
+body.project-detail-page--brand [aria-labelledby="brand-block-forty"] .project-brand-featured-media {
+  margin-bottom: clamp(0.7rem, 2vw, 1rem);
 }
 
 body.project-detail-page--brand .project-brand-gallery-item {
@@ -1643,8 +1668,8 @@ body.project-detail-page--brand .project-brand-gallery-item {
 
 body.project-detail-page--brand .project-brand-featured-media .project-brand-gallery-item img {
   width: 100%;
-  height: auto;
-  max-height: min(72vh, 820px);
+  height: 100vh;
+  max-height: none;
   object-fit: contain;
   display: block;
 }
@@ -1673,15 +1698,13 @@ body.project-detail-page--brand .project-brand-block-text .brand-subheading {
 }
 
 body.project-detail-page--brand .project-brand-duo-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: max-content;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(0.8rem, 2.6vw, 1.3rem);
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
   margin-top: clamp(1.2rem, 3vw, 1.6rem);
   box-sizing: border-box;
 }
@@ -1696,10 +1719,10 @@ body.project-detail-page--brand .project-brand-duo-row .project-brand-gallery-it
 
 body.project-detail-page--brand .project-brand-duo-row .project-brand-gallery-item img {
   display: block;
-  width: auto;
-  max-width: min(520px, 48vw);
-  height: auto;
-  max-height: clamp(280px, 34vw, 420px);
+  width: 100%;
+  max-width: none;
+  height: clamp(320px, 42vw, 620px);
+  max-height: none;
   margin-inline: auto;
   object-fit: contain;
   object-position: center;
@@ -1712,15 +1735,15 @@ body.project-detail-page--brand .project-brand-duo-row .project-brand-gallery-it
 
 body.project-detail-page--brand .project-brand-split-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: min(900px, 100%);
-  margin: 0 auto clamp(1.4rem, 3.4vw, 1.9rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  justify-content: stretch;
+  gap: clamp(0.8rem, 2.6vw, 1.3rem);
+  width: 100%;
+  max-width: none;
+  margin: clamp(1.2rem, 3vw, 1.6rem) auto clamp(1.4rem, 3.4vw, 1.9rem);
   box-sizing: border-box;
-  /* Nudge so the visual mass of the two images reads centered on the page */
-  transform: translateX(-40px);
+  transform: none;
 }
 
 body.project-detail-page--brand .project-brand-split-grid .project-brand-gallery-item {
@@ -1732,10 +1755,10 @@ body.project-detail-page--brand .project-brand-split-grid .project-brand-gallery
 
 body.project-detail-page--brand .project-brand-split-grid .project-brand-gallery-item img {
   display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: clamp(260px, 34vw, 420px);
+  width: 100%;
+  max-width: none;
+  height: clamp(320px, 42vw, 620px);
+  max-height: none;
   margin-inline: auto;
   object-fit: contain;
   object-position: center;

@@ -13,7 +13,7 @@ const ALL_IMAGES = [
 const SOCIAL_LINKS = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/feed/",
+    href: "https://www.linkedin.com/in/mihaela-mironet-56548119b",
     target: "_blank",
     icon: `
       <svg viewBox="0 0 24 24" aria-hidden="true">

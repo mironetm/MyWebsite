@@ -573,6 +573,7 @@ body.about-page {
 
 .about-photo {
   flex: 1;
+  max-width: 680px;
 }
 
 .about-photo img {
@@ -584,7 +585,8 @@ body.about-page {
 }
 
 .about-text {
-  flex: 2;
+  flex: 1;
+  max-width: 680px;
   color: #e07593;
   font-size: 1.1rem;
   line-height: 1.75;

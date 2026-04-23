@@ -1319,6 +1319,67 @@ body.project-detail-page .portfolio-main {
   margin-top: 1rem;
 }
 
+/* Editorial — She Travels: image left, copy right */
+body.project-detail-page--editorial .project-detail-inner {
+  max-width: min(1200px, 100%);
+  width: 100%;
+}
+
+body.project-detail-page--editorial .project-editorial-feature {
+  margin: 0;
+}
+
+body.project-detail-page--editorial .project-editorial-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  width: 100%;
+}
+
+body.project-detail-page--editorial .project-editorial-figure {
+  margin: 0;
+  min-width: 0;
+}
+
+body.project-detail-page--editorial .project-editorial-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(88vh, 920px);
+  object-fit: contain;
+  object-position: left center;
+  border-radius: 2px;
+}
+
+body.project-detail-page--editorial .project-editorial-soon {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(74, 38, 88, 0.25);
+  max-width: 36em;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: #3a1f47;
+}
+
+body.project-detail-page--editorial .project-editorial-copy {
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  body.project-detail-page--editorial .project-editorial-split {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  body.project-detail-page--editorial .project-editorial-figure img {
+    max-height: none;
+    object-position: center top;
+  }
+}
+
 /* Social project page — stacked: heading, large image, description under image */
 body.project-detail-page--social .project-detail-inner {
   max-width: 100%;
